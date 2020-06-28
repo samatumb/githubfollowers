@@ -27,7 +27,7 @@ class SearchVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) { //everytime when view appear
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func createDismissKeyboardTapGesture() {
