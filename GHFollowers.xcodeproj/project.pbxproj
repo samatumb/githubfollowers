@@ -132,7 +132,7 @@
 				18EF948824A4F109009A1670 /* Managers */,
 				18EF948324A4EBAE009A1670 /* Model */,
 				18CC8D7F24A48996002173EF /* Extensions */,
-				18CC8D7E24A48966002173EF /* Custom Views */,
+				18CC8D7E24A48966002173EF /* CustomViews */,
 				18CC8D7D24A4892E002173EF /* Screens */,
 				18A7EF0424A4026D003F750A /* Info.plist */,
 				18A7EF0124A4026D003F750A /* LaunchScreen.storyboard */,
@@ -152,7 +152,7 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		18CC8D7E24A48966002173EF /* Custom Views */ = {
+		18CC8D7E24A48966002173EF /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
 				18570E5F24ABB3F300D9403D /* TabBarControllers */,
@@ -164,7 +164,7 @@
 				18E5787E24A90B6500C0705F /* ViewControllers */,
 				18E5787D24A90B4100C0705F /* Labels */,
 			);
-			path = "Custom Views";
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		18CC8D7F24A48996002173EF /* Extensions */ = {
