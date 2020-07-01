@@ -27,6 +27,7 @@ class UserInfoVC: GFDataLoadingVC {
     var username: String!
     weak var delegate: UserInfoVCDelegate!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewControllers()
@@ -35,11 +36,13 @@ class UserInfoVC: GFDataLoadingVC {
         getUserInfo()
     }
     
+    
     func configureViewControllers() {
         view.backgroundColor = .systemBackground
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem = doneButton
     }
+    
     
     func configureScrollView() {
         view.addSubview(scrollView)
@@ -52,6 +55,7 @@ class UserInfoVC: GFDataLoadingVC {
             contentView.heightAnchor.constraint(equalToConstant: 600)
         ])
     }
+    
     
     func getUserInfo() {
         NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
@@ -66,6 +70,7 @@ class UserInfoVC: GFDataLoadingVC {
             }
         }
     }
+    
     
     func configureUIElements(with user: User) {
         self.add(childVC: GFRepoItemVC(user: user, delegate: self), to: self.itemViewOne)
@@ -106,12 +111,14 @@ class UserInfoVC: GFDataLoadingVC {
         ])
     }
     
+    
     func add(childVC: UIViewController, to containerView: UIView) {
         addChild(childVC)
         containerView.addSubview(childVC.view)
         childVC.view.frame = containerView.bounds
         childVC.didMove(toParent: self)
     }
+    
     
     @objc func dismissVC() {
         dismiss(animated: true)

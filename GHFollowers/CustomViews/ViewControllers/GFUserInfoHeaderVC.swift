@@ -25,9 +25,11 @@ class GFUserInfoHeaderVC: UIViewController {
         self.user = user
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +38,9 @@ class GFUserInfoHeaderVC: UIViewController {
         configureUIElements()
     }
     
+    
     func configureUIElements() {
-        downloadAvatarImage()
-        
+        avatarImageView.downloadImage(fromURL: user.avatarUrl)
         usernameLabel.text          = user.login
         nameLabel.text              = user.name ?? ""
         locationLabel.text          = user.location ?? "No Location"
@@ -49,12 +51,6 @@ class GFUserInfoHeaderVC: UIViewController {
         locationImageView.tintColor = .secondaryLabel
     }
     
-    func downloadAvatarImage() {
-        NetworkManager.shared.downloadImage(from: user.avatarUrl) { [weak self] image in
-            guard let self = self else { return }
-            DispatchQueue.main.async { self.avatarImageView.image = image }
-        }
-    }
     
     func layoutUI() {
         let padding: CGFloat            = 20
@@ -92,7 +88,5 @@ class GFUserInfoHeaderVC: UIViewController {
             bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bioLabel.heightAnchor.constraint(equalToConstant: 90)
         ])
-        
     }
-    
 }
