@@ -179,8 +179,10 @@ extension FollowerListVC: UICollectionViewDelegate {
         }
     }
     
+    //MARK: -push
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("select")
         let activeArray = isSearching ? filteredFollowers : followers
         let follower    = activeArray[indexPath.item]
         
